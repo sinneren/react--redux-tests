@@ -8,13 +8,13 @@ export function newsReducer(state = initialState, action) {
         case 'NEWS_FETCHING':
             return {
                 ...state,
-                fetching: true,
+                fetching: action.payload.fetching,
             }
         case 'NEWS_LOADED':
             return {
                 ...state,
-                fetching: false,
-                news: action.payload,
+                fetching: action.payload.fetching,
+                news: action.payload.news,
             }
         case 'NEWS_FAIL':
             return {

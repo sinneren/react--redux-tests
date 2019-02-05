@@ -10,7 +10,6 @@ class News extends Component {
     }
     render() {
         const { news, fetching } = this.props.news;
-        console.log(news);
         return (
             <div className="App">
                 {news.map(item => <NewsItem key={item._id} data={item} />)}

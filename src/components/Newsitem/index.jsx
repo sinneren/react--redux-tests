@@ -12,7 +12,7 @@ export default class NewsItem extends React.Component {
                 <article>
                     {text}
                 </article>
-                <div>{tags.map((item, index) => (<code><small>{item}{index !== tags_length && ","}</small></code>))}</div>
+                <code>{tags.map((item, index) => (<small key={index}>{item}{index !== tags_length && ","}</small>))}</code>
             </div>
         )
     }
@@ -22,5 +22,5 @@ NewsItem.propTypes = {
     picture: PropTypes.string,
     title: PropTypes.string,
     text: PropTypes.string,
-    tags: PropTypes.array.isRequired,
+    tags: PropTypes.array,
 }
