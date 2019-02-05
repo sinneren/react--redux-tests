@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export class NewsItem extends React.Component {
+export default class NewsItem extends React.Component {
     render() {
-        const { picture, title, text, tags } = this.props.item;
+        const { picture, title, text, tags } = this.props.data;
+        const tags_length = tags.length - 1;
+
         return (
             <div>
-                {title}
-                <div>
+                <h1>{title}</h1>
+                <article>
                     {text}
-                </div>
+                </article>
+                <div>{tags.map((item, index) => (<code><small>{item}{index !== tags_length && ","}</small></code>))}</div>
             </div>
         )
     }
