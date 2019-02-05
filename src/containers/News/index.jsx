@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import NewsItem from '../../components/Newsitem';
 
 class News extends Component {
     render() {
@@ -7,7 +8,7 @@ class News extends Component {
 
         return (
             <div className="App">
-
+                {news.map(item => <NewsItem data={item} />)}
             </div>
         )
     }

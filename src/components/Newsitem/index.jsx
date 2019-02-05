@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 
 export class NewsItem extends React.Component {
     render() {
-        const { picture, title, text, tags } = this.props;
+        const { picture, title, text, tags } = this.props.item;
         return (
             <div>
-
+                {title}
+                <div>
+                    {text}
+                </div>
             </div>
         )
     }
